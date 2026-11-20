@@ -1,0 +1,134 @@
+#videoSection{
+  width:700px;
+  height:400px;
+  background:black;
+  margin:50px auto;
+}
+
+#videoHeader {
+  width:100%;
+  height:60px;
+  background:red;
+  text-align:center;
+  padding-top:10px;
+  color:white;
+}
+
+#videoBody {
+  width:100%;
+  height:280px;
+}
+
+#videoFooter {
+  width:100%;
+  height:60px;
+  background:red;
+  display:flex;
+}
+
+#player {
+  width:100%;
+  height:100%;
+}
+
+#optionContainer {
+  width:25%;
+  height:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  font-size:22px;
+}
+
+#progressContainer {
+  width:50%;
+  height:100%;
+  background:oklch(92.5% 0.084 155.995);
+}
+
+#progressBar {
+  width:0%;
+  height:100%;
+  background-color:oklch(62.7% 0.194 149.214);
+}
+
+#actionContainer {
+  width:25%;
+  height:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  font-size:22px;
+}
+
+#volumeContainer {
+  position:relative;
+}
+
+#volumeBar {
+  position:absolute;
+  transform:rotate(-90deg);
+  left:-30px;
+  width:70px;
+  top:-40px;
+}
+
+#settingContainer {
+  position:relative;
+}
+
+#settingBox {
+  position:absolute;
+  width:170px;
+  height:170px;
+  background:yellow;
+  bottom:30px;
+  left:-53px;
+  padding:5px;
+  overflow:hidden;
+  transition:0.5s;
+}
+
+#speedContainer,#bgContainer,#txtContainer,#miniContainer {
+  display:flex;
+  justify-content:space-between;
+  font-size:18px !important;
+  margin-bottom:5px;
+}
+
+#speedInput {
+  width:80px;
+}
+
+#speedBtn {
+  width:60px;
+  height:30px;
+  background:black;
+  color:white;
+  border-style:none;
+}
+
+#resetBtn {
+  width:100px;
+  height:30px;
+  background:black;
+  color:white;
+}
+
+#miniPlayerBox {
+  width:270px;
+  height:170px;
+  /* border:1px solid red; */
+  position:fixed;
+  bottom:10px;
+  right:15px;
+  display:none;
+}
+
+#miniPlayer {
+  width:100%;
+}
+
+#closeIcon {
+  float:right;
+}

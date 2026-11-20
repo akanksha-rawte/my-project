@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/video.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="header">
+    <div id="logoutContainer">
+      <h1 id="username" class="do-hyeon-regular">Nilesh</h1>
+      <button id="logoutBtn" onclick="logoutUser()">
+        Logout
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+      <div>
+          <div id="userpic" onclick="uploadProfile()">
+
+          </div>
+      </div>
+    </div>
+
+    <div id="videoSection">
+      <div id="videoHeader">
+        <h1>AIW VIDEO PLAYER V 1.1</h1>
+      </div>
+      <div id="videoBody">
+        <video id="player" src="../images/dummy.mp4" ontimeupdate="videoProgress()"
+         poster="../images/upload.jpg" onclick="uploadVideo()">
+        </video>
+      </div>
+      <div id="videoFooter">
+        <div id="optionContainer">
+          <i class="fa fa-play-circle actionIcon" id="playIcon" onclick="playPause()"></i>
+          <i class="fa fa-stop-circle actionIcon"></i>
+          <i class="fa fa-refresh actionIcon"></i>
+        </div>
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+        </div>
+        <div id="actionContainer">
+          <i class="fa fa-download actionIcon"></i>
+        <div id="settingContainer">
+          <div id="settingBox">
+            <div id="speedContainer">
+              <button id="speedBtn">Speed <span id="speedTxt">1<span></button>
+              <input type="range" id="speedInput" value="1"
+               oninput="handleSpeed(event)" min="1" max="10"/>
+            </div>
+            <div id="bgContainer">
+              <input type="color" id="bgInput"/>
+              <span>Bg Theme</span>
+            </div>
+            <div id="txtContainer">
+              <input type="color" id="txtInput"/>
+              <span>Txt Theme</span>
+            </div>
+            <div id="miniContainer">
+              <i class="fa fa-clone" onclick="openMiniPlayer()"></i>
+              <span>Mini player</span>
+            </div>
+            <button id="resetBtn">Reset</button>
+          </div>
+          <i class="fa fa-gear actionIcon" id="settingIcon"></i>
+        </div>
+        <div id="volumeContainer">
+          <input type="range" id="volumeBar" value="1" min="0" max="1"
+           step="0.1"
+           style="display:none;" oninput="changeVolume()">
+          <i class="fa fa-volume-up actionIcon" id="volumeIcon" onclick="handleVolume()"></i>
+        </div>
+          <i class="fa fa-arrows-alt actionIcon" onclick="fullVideo()"></i>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="footer">
+      <div>
+
+      </div>
+    </div>
+
+
+    <div id="miniPlayerBox">
+      <i class="fa fa-times-circle" id="closeIcon"></i>
+      <video src="" id="miniPlayer" controls="controls"></video>
+    </div>
+
+    <script src="../js/profile.js"></script>
+    <script src="../js/video.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/company.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  </head>
+  <body>
+    <div id="header">
+    <div id="logoutContainer">
+      <h1 id="username" class="do-hyeon-regular">Nilesh</h1>
+      <button id="logoutBtn" onclick="logoutUser()">
+        Logout
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+      <div>
+          <div id="userpic" onclick="uploadProfile()">
+
+          </div>
+      </div>
+    </div>
+
+    <div id="company_section">
+      <div id="cmp_option">
+        <i class="fa fa-home" id="cmp_icon"></i>
+        <h1 class="hover_effect"
+         onclick="openCompanyModal()" id="cmp_msg">Create Company</h1>
+        <div id="cmp_modal" style="display:none;overflow:hidden;">
+          <div id="cmp_blur">
+            <i class="fa fa-times-circle" onclick="closeCompanyModal()"></i>
+            <form id="cmp_form">
+              <div>
+                <label>Enter company name</label>
+                <input class="cmp_require" id="company_name"/>
+              </div>
+              <div>
+                <label>Enter company slug</label>
+                <input id="company_slug"/>
+              </div>
+              <div>
+                <label>Enter company email</label>
+                <input id="company_email"/>
+              </div>
+              <div>
+                <label>Enter founder name</label>
+                <input class="cmp_require" id="company_founder"/>
+              </div>
+              <div>
+                <label>Enter founder contact</label>
+                <input class="cmp_require" id="company_founder_contact"/>
+              </div>
+              <div>
+                <label>Enter founder email</label>
+                <input class="cmp_require" id="company_founder_email"/>
+              </div>
+              <div>
+                <label>Enter company city</label>
+                <input class="cmp_require" id="company_city"/>
+              </div>
+              <div>
+                <label>Enter company state</label>
+                <input class="cmp_require" id="company_state"/>
+              </div>
+              <div>
+                <label>Enter company country</label>
+                <input class="cmp_require" id="company_country"/>
+              </div>
+              <div>
+                <label>Enter company pincode</label>
+                <input class="cmp_require" id="company_pincode"/>
+              </div>
+              <div>
+                <label>Company Established date</label>
+                <input type="date" class="cmp_require" id="company_established"/>
+              </div>
+              <div>
+                <label>Enter Financial Year</label>
+                <input type="date" name="financial_year" class="cmp_require"
+                id="company_financial"/>
+              </div>
+              <button>Create Company</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="cmp_option">
+        <i class="fa fa-trash" id="cmp_icon"></i>
+        <h1 class="hover_effect">Delete Company</h1>
+      </div>
+
+      <div id="cmp_option">
+        <i class="fa fa-times" id="cmp_icon"></i>
+        <h1 class="hover_effect">Shut Company</h1>
+      </div>
+
+    </div>
+
+
+
+    <div id="footer">
+      <div></div>
+    </div>
+
+    <script src="../js/profile.js"></script>
+    <script src="../js/company.js"></script>
+  </body>
+</html>

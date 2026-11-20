@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/billing.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div id="header">
+    <div id="logoutContainer">
+      <h1 id="username" class="do-hyeon-regular">Yash</h1>
+      <button id="logoutBtn" onclick="logoutUser()">
+        Logout
+        <i class="fa fa-sign-out"></i>
+      </button>
+    </div>
+      <div>
+          <div id="userpic" onclick="uploadProfile()">
+
+          </div>
+      </div>
+    </div>
+
+    <div id="billing_section">
+      <div id="cmp_logo"></div>
+      <div>
+      <div id="cmp_name"></div>
+      <div id="all_bill" onclick="openAllBills()">All Bills</div>
+    </div>
+      <div id="billing_opiton">
+        <div class="billing_option_container">
+          <i class="fa fa-home"></i>
+          <span  onclick="handleUnit()">Create Unit</span>
+          <div id="unit_box">
+              <i class="fa fa-times-circle" id="close_unit"
+               onclick="closeUnit()"></i>
+              <form id="unit_form" onsubmit="saveUnit(event)">
+                <div>
+                  <label>Unit Short Name</label>
+                  <input id="unit_short_name"/>
+                </div>
+                <div>
+                  <label>Unit Full Name</label>
+                  <input id="unit_full_name"/>
+                </div>
+                <button id="unit_btn">Create</button>
+              </form>
+          </div>
+        </div>
+
+        <div class="billing_option_container">
+          <i class="fa fa-dollar"></i>
+          <span  onclick="openTax()">Create Tax</span>
+          <div id="tax_container">
+            <i class="fa fa-times-circle" id="close_tax" onclick="closeTax()"></i>
+            <form id="tax_form" onsubmit="saveTax(event)">
+              <div>
+                <label>Enter tax name</label>
+                <input id="tax_name"/>
+              </div>
+              <div>
+                <label>Enter tax percentage</label>
+                <input id="tax_percentage"/>
+              </div>
+              <button id="tax_btn">Create</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="billing_option_container" onclick="openBill()">
+          <i class="fa fa-book"></i>
+          Create Bill
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div></div>
+    </div>
+
+    <div id="blur_box">
+      <div id="bill_modal">
+        <table border="1" bordercolor="black" width="100%">
+          <tr>
+            <td width="50%">
+              <div id="cmp_bill_logo"></div>
+            </td>
+            <td width="50%">
+            <div id="bill_num_container">
+              <h3 id="currentDate">09/04/2026</h3>
+              <button id="invoice_num"></button>
+              <button onclick="closeBill()">
+                <i class="fa fa-times-circle"></i></button>
+            </div>
+              <address id="cmp_address"></address>
+
+            </td>
+          </tr>
+          <tr>
+            <!-- oninput="customerName() -->
+            <td colspan="2" id="cus_box">
+              <div>
+                <label>Enter customer name</label>
+                <input id="customer_name"/>
+              </div>
+              <div>
+                <label>Enter customer email</label>
+                <input id="customer_email"/>
+              </div>
+              <div>
+                <label>Enter customer mobile</label>
+                <input id="customer_mobile"/>
+              </div>
+              <div>
+                <label>Enter customer address</label>
+                <textarea id="customer_address"></textarea>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div id="productTableBox">
+        <table border="1" bordercolor="black" width="100%" id="productTable">
+          <tr align="center">
+            <td width="20%">Item</td>
+            <td width="20%">Qty</td>
+            <td width="20%">Price</td>
+            <td width="20%">Amount</td>
+            <td width="20%">Action</td>
+          </tr>
+        </table>
+      </div>
+        <table border="1" bordercolor="black" width="100%">
+          <tr>
+            <td colspan="3" align="right">
+              Total
+            </td>
+            <td colspan="2" align="center">
+              <i class="fa fa-rupee"></i> <span id="total">00</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" align="right" id="tax_name_box">
+
+            </td>
+            <td colspan="2" align="center" id="tax_per_box">
+
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" align="right">
+              Sub Total
+            </td>
+            <td colspan="2" align="center">
+              <i class="fa fa-rupee"></i> <span id="subtotal">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" align="right">
+              Paid balance
+            </td>
+            <td colspan="2" align="center">
+              <input oninput="calculateDues()" id="paid_input"/>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" align="right">
+              Dues Balance
+            </td>
+            <td colspan="2" align="center">
+              <i class="fa fa-rupee"></i> <span id="dues">0</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <button id="addBtn" onclick="addItem()">
+                <i class="fa fa-plus"></i> Add
+              </button>
+              <button id="saveBtn" onclick="saveBill()">
+                <i class="fa fa-save"></i> Save
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+<div id="all_bill_container">
+<div id="all_bill_box">
+<button id="close_bill_box" onclick="closeAllBills()">
+<i class="fa fa-times-circle"></i>
+</button>
+<input placeholder="Enter invoice number"
+id="search_invoice" oninput="searchInvoice()">
+<table border="1" bordercolor="black" width="100%" id="bill_table">
+  <tr align="center">
+    <td width="14.28%">invoice Number</td>
+    <td width="14.28%">customer name</td>
+    <td width="14.28%">customer email</td>
+    <td width="14.28%">customer mobile</td>
+    <td width="14.28%">customer dues</td>
+    <td width="14.28%">paid dues</td>
+    <td width="14.28%">all details</td>
+ </tr>
+</table>
+</div>
+</div>
+    <script src="../js/profile.js"></script>
+    <script src="../js/billing.js"></script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="left_section">
+      <i class="fa fa-times-circle" id="closeIcon"
+      onclick="closeLeftSection()"></i>
+      <div>
+        <form id="registerForm" onsubmit="registerUser(event)">
+          <h1>Registration</h1>
+          <div>
+            <label>Enter fullname</label>
+            <input id="fullname" class="requireInput"/>
+          </div>
+          <div>
+            <label>Enter Email</label>
+            <input id="email" class="requireInput"/>
+          </div>
+          <div>
+            <label>Enter mobile</label>
+            <input id="mobile" class="requireInput"/>
+          </div>
+          <div>
+            <label>Enter password</label>
+            <input type="password" id="password" class="requireInput"/>
+          </div>
+          <div>
+            <label>Enter confirm password</label>
+            <input type="password" id="confirm_password" class="requireInput"/>
+          </div>
+          <button id="registerBtn">
+            Register
+            <i class="fa fa-sign-in"></i>
+          </button>
+        </form>
+        <p id="registerMsg"></p>
+        <form id="loginForm" onsubmit="loginUser(event)">
+          <h1>Login With us</h1>
+          <div>
+            <label>Enter email</label>
+            <input id="login_email"/>
+          </div>
+          <div>
+            <label>Enter password</label>
+            <input id="login_password"/>
+          </div>
+          <button id="login_btn">
+            Login
+            <i class="fa fa-sign-in"></i>
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+
+    <div id="logo_box">
+      <i class="fa fa-play-circle animate__animated animate__shakeX
+      animate__infinite animate__slower"
+      id="book_icon" onclick="openSection()">
+    </i>
+      <span class="bungee-regular">
+        Bill Management
+      </span>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

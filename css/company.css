@@ -1,0 +1,69 @@
+#company_section {
+  width:350px;
+  height:300px;
+  /* border:1px solid red; */
+  margin:100px auto;
+}
+
+#cmp_option {
+  /* display:flex; */
+  /* align-items:center; */
+  background:black;
+  height:60px;
+  margin-bottom:40px;
+  position:relative;
+}
+
+#cmp_option h1 {
+  color:white;
+  padding-left:20px;
+  font-size:20px;
+  float:left;
+  padding-top:20px;
+}
+
+#cmp_icon {
+  width:60px;
+  height:60px;
+  background:blue;
+  font-size:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  float:left;
+}
+
+#cmp_modal {
+  width:100%;
+  height:350px;
+  border:1px solid red;
+  float:left;
+  clear:left;
+  position:absolute;
+  background-image:url(../images/cmp.webp);
+  z-index:1000;
+}
+
+#cmp_blur {
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0,0.5);
+  padding:10px;
+  overflow-y:scroll;
+  color:white;
+}
+
+#cmp_form input {
+  width:100%;
+  height:30px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+#cmp_form button {
+  width:140px;
+  height:30px;
+  background:white;
+  border-style:none;
+}
